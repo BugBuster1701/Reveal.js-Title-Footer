@@ -2,7 +2,7 @@
  *                                                       *
  * Javascript for the Title-Footer plugin for Reveal.js  *
  *                                                       *
- * Author: Igor Leturia, Sebastian Joerz                 *
+ * Author: Igor Leturia, Sebastian Joerz, Glen Langer    *
  *                                                       *
  * License: GPL v3                                       *
  * http://www.gnu.org/copyleft/gpl.html                  *
@@ -38,18 +38,21 @@ const RevealTitleFooter = {
     footer.appendChild(footerContent);
 
     let titleLink = document.createElement('a');
+    titleLink.setAttribute('class', 'title-link');
     titleLink.setAttribute('href', '#/0');
     titleLink.textContent = title;
     footerContent.appendChild(titleLink);
 
     if (author) {
       let authorSpan = document.createElement('span');
+      authorSpan.setAttribute('class', 'author');
       authorSpan.textContent = ` - ${author}`;
       footerContent.appendChild(authorSpan);
     }
 
     if (showDate) {
       let dateSpan = document.createElement('span');
+      dateSpan.setAttribute('class', 'date');
       dateSpan.textContent = ` - ${new Date().toLocaleDateString('de-DE')}`;
       footerContent.appendChild(dateSpan);
     }
